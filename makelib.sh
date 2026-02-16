@@ -1,1 +1,2 @@
-gcc -c include/*.cpp && ar rcs HiCPPMlib.a *.o && rm *.o
+bash extracth.sh
+gcc -c src/*.cpp && ar rcs lib/libHiCPPM.a *.o && rm *.o
