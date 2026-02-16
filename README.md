@@ -25,3 +25,26 @@ Avg per call: 0.017406 μs
 ### Sorting Algorithms
 - **Insertion Sort** - Optimized for small datasets
 - Efficient for various data sizes
+
+## 🔧 Usage
+
+### Basic Example
+```cpp
+#include "HiCPPM.h"
+
+int main() {
+    // Square root calculation
+    double result = squareRoot(16.0);
+    std::cout << "√16 = " << result << std::endl;
+    
+    // Sorting
+    std::vector numbers = {5, 2, 8, 1, 9};
+    insertionSort(numbers);
+    
+    // Vector operations
+    std::vector data = {1, 2, 3, 4};
+    pushIntToIndex(data, 99, 2);  // Insert 99 at index 2
+    
+    return 0;
+}
+```
