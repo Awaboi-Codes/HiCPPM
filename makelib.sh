@@ -1,1 +1,1 @@
-gcc -shared -fPIC -o HiCPPMlib.so include/*.cpp
+gcc -c include/*.cpp && ar rcs HiCPPMlib.a *.o && rm *.o
