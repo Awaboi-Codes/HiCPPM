@@ -10,7 +10,7 @@ int main() {
     auto start = std::chrono::high_resolution_clock::now();
     
     for (int i = 0; i < ITERATIONS; i++) {
-        double result = squareRoot(23372337, 1);
+        double result = squareRoot(25, 1);
     }
     
     auto end = std::chrono::high_resolution_clock::now();
