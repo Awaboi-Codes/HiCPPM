@@ -27,24 +27,12 @@ all: $(LIBRARY)
 
 # Create combined header (extracth.sh)
 $(HEADER): $(H_FILES) | $(LIB_DIR)
-	@echo "→ Creating combined header..."
-	@echo "#ifndef HICPPM_H" > $(HEADER)
-	@echo "#define HICPPM_H" >> $(HEADER)
-	@echo "" >> $(HEADER)
-	@echo "// Standard includes" >> $(HEADER)
-	@echo "#include <vector>" >> $(HEADER)
-	@echo "#include <string>" >> $(HEADER)
-	@echo "" >> $(HEADER)
-	@for file in $(SRC_DIR)/*.h; do \
-		if [ -f "$$file" ]; then \
-			echo "// From $$file" >> $(HEADER); \
-			grep -E "^#include" "$$file" >> $(HEADER); \
-			grep -E "^\s*(int|void|double|float|char|bool|class|struct|namespace|template|typedef|using).*" "$$file" | \
-			grep -v "^#ifndef\|^#define\|^#endif" >> $(HEADER); \
-			echo "" >> $(HEADER); \
-		fi \
+	@echo "→ Copying header files..."
+	@for file in $(H_FILES); do \
+		echo "// $$file" >> $(HEADER); \
+		cat "$$file" >> $(HEADER); \
+		echo "" >> $(HEADER); \
 	done
-	@echo "#endif // HICPPM_H" >> $(HEADER)
 	@echo "✓ Combined header created: $(HEADER)"
 
 # Compile object files

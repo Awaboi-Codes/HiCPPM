@@ -1,4 +1,4 @@
-#include "square.h"
+#include "alegebraic.h"
 
 double squareRoot(double n, int iterations) {
     if (n < 0) return -1.0;  // Error case
@@ -25,3 +25,27 @@ double squareRoot(double n, int iterations) {
     return x;
 }
 
+double slope(double y, double x, double m) { // gets the slope from an equation
+    // y = mx+b, but since we don't need b, slope = mx/y
+    return (m * x) / y;
+}
+
+int sgn(double x) { // returns only -1, 0, or 1
+    if (x == 0) {
+        return 0;
+    } else if (x < 0) {
+        return -1;
+    } else {
+        return 1;
+    }
+}
+
+int ceil(double x) {
+    if (int(x) < x) return int(x)+1;
+    return int(x);
+}
+
+int floor(double x) {
+    if (int(x) > x) return int(x)-1;
+    return int(x);
+}

@@ -1,5 +1,5 @@
 #include "sort.h"
-#include "square.h"
+#include "alegebraic.h"
 #include "vec.h"
 
 #include <cmath>
